@@ -12,8 +12,10 @@ node_js:
 
 install:
   - yarn
-    
-script:
+
+before_script:
   - yarn start
+
+script:
   - yarn test
   - yarn lint
