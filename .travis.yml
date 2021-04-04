@@ -16,6 +16,7 @@ install:
 before_script:
   - yarn add chromedriver 
   - yarn add selenium-side-runner
+  - yarn start
 
 script:
   - yarn test
