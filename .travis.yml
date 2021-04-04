@@ -13,6 +13,7 @@ node_js:
 install:
   - yarn
 
+  
 script:
   - yarn start & sleep 1
   - yarn test & sleep 2
