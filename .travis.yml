@@ -1,7 +1,9 @@
 language: node_js
 
 addons:
-  chrome: stable
+  apt:
+    packages:
+      - google-chrome-stable
 
 before_script:
   - LATEST_CHROMEDRIVER_VERSION=`curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE"`
