@@ -14,5 +14,6 @@ install:
   - yarn
     
 script:
+  - yarn start
   - yarn test
   - yarn lint

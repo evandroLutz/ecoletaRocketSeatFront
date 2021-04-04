@@ -12,7 +12,7 @@ describe('cadastro_ponto_coleta', () => {
     await driver.quit();
   });
   it('cadastro_ponto_coleta', async function() {
-    await driver.get('http://127.0.0.1:8080/');
+    await driver.get('http://localhost:3000/');
     await driver.manage().window().setRect(968, 1020);
     await driver
       .findElement(By.linkText('Cadastre um ponto de coleta'))
