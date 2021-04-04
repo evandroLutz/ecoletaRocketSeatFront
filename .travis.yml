@@ -13,8 +13,10 @@ node_js:
 install:
   - yarn
 
-after_script:
-  - yarn test
+before_script:
+  - yarn start
+  - sleep 3 # give xvfb some time to start
+  - sleep 3 # give Web server some time to bind to sockets, etc
 
 script:
-  - yarn start
+  - yarn test
