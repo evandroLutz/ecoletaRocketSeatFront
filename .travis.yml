@@ -13,6 +13,9 @@ node_js:
 install:
   - yarn
 
+before_script:
+  - yarn add chromedriver 
+  - yarn add selenium-side-runner
 
 script:
   - yarn test
