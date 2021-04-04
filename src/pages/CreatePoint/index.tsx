@@ -142,7 +142,8 @@ const CreatePoint = (): JSX.Element => {
 
     await api.post('points', data);
 
-    // alert('ponto de coleta criado');
+    // eslint-disable-next-line no-alert
+    alert('ponto de coleta criado');
     history.push('/');
   }
 
