@@ -6,6 +6,7 @@ addons:
   chrome: stable
 
 dist: trusty
+
 services:
   - xvfb
 
