@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
@@ -126,8 +125,7 @@ const CreatePoint = (): JSX.Element => {
     const uf = selectedUf;
     const city = selectedCity;
     const [latitude, longitude] = selectedPosition;
-    // eslint-disable-next-line @typescript-eslint/no-shadow
-    const items = selectedItems;
+    const itemsListToSubmit = selectedItems;
 
     const data = {
       name,
@@ -137,7 +135,7 @@ const CreatePoint = (): JSX.Element => {
       city,
       latitude,
       longitude,
-      items,
+      items: itemsListToSubmit,
     };
 
     await api.post('points', data);
