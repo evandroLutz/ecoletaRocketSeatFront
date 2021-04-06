@@ -1,11 +1,28 @@
 language: node_js
 
+addons:
+  chrome: stable
+
+dist: xenial
+services:
+  - xvfb
+
 node_js:
   - 12
 
+
 install:
   - yarn
-    
+
+before_script:
+  - yarn add chromedriver 
+  - yarn add selenium-side-runner
+  - "export DISPLAY=:99.0"
+  # insert the new value into the system config
+  - echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+  - sleep 3 # give xvfb some time to start
+  - yarn start  # start a Web server
+  - sleep 3 # give Web server some time to bind to sockets, etc
+
 script:
   - yarn test
-  - yarn lint
